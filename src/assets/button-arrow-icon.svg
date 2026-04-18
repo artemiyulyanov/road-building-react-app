@@ -1,0 +1,11 @@
+<svg 
+  viewBox="-2 -2 81 81" 
+  fill="none" 
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="xMidYMid meet"
+>
+  <path 
+    d="M0 7C0 3.13 3.13 0 7 0H70C73.87 0 77 3.13 77 7V70C77 73.87 73.87 77 70 77C66.13 77 63 73.87 63 70V24L16 71L6 61L53 14H7C3.13 14 0 10.87 0 7Z" 
+    fill="white"
+  />
+</svg>
