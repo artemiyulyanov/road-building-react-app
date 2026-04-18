@@ -9,7 +9,7 @@ export const CompaniesSliderContainer: React.FC<CompaniesSliderContainerProps> =
     return (
         <div className={clsx(
             'w-full',
-            'pl-[20px] pr-[20px]',
+            'pl-[20px] pr-[20px] md:pl-[40px] md:pr-[40px]',
         )}>
             <CompaniesSlider />
         </div>

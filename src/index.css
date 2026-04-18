@@ -28,6 +28,7 @@
   --color-light: #FFFFFF;
   --color-primary: #FDC319;
   --color-dark: #0F0F0F; 
+  --color-dark-2: #3E3E3E;
 }
 
 @layer utilities {

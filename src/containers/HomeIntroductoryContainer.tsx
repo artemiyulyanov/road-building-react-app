@@ -46,7 +46,7 @@ export const HomeIntroductoryContainer: React.FC<HomeIntroductoryContainerProps>
                         </PlainText>
                         <PlainText
                             textClassName={clsx(
-                                "text-6xl font-medium",
+                                "text-5xl md:text-6xl font-medium",
                                 "text-light text-center"
                             )}
                         >
@@ -54,7 +54,7 @@ export const HomeIntroductoryContainer: React.FC<HomeIntroductoryContainerProps>
                         </PlainText>
                         <PlainText
                             textClassName={clsx(
-                                "text-xl font-medium",
+                                "text-lg md:text-xl font-medium",
                                 "text-light text-center opacity-75 leading-[0.95]"
                             )}
                         >

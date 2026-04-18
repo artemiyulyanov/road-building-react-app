@@ -29,9 +29,6 @@ export const LargeLogoButton: React.FC<LargeLogoButtonProps> = ({
                 className={clsx(
                     "relative w-36 md:w-40"
                 )}
-                // className={clsx(
-                //     "relative w-36 md:w-42 bg-green-500"
-                // )}
             />
         </PlainButton>
     );
