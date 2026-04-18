@@ -3,11 +3,11 @@ import banner from '@/assets/introductory-banner.png';
 import { PlainText } from "@/ui/PlainText";
 import { PointerButton } from "@/ui/PointerButton";
 
-export type HomeIntroductoryBannerProps = React.HTMLProps<HTMLDivElement> & {
+export type HomeIntroductoryContainerProps = React.HTMLProps<HTMLDivElement> & {
 
 };
 
-export const HomeIntroductoryBanner: React.FC<HomeIntroductoryBannerProps> = ({
+export const HomeIntroductoryContainer: React.FC<HomeIntroductoryContainerProps> = ({
     ...props
 }) => {
     return (
@@ -58,7 +58,7 @@ export const HomeIntroductoryBanner: React.FC<HomeIntroductoryBannerProps> = ({
                                 "text-light text-center opacity-75 leading-[0.95]"
                             )}
                         >
-                            Имеем два Асфальтовых завода по разным берегам Новосибирска, имульсионую установку, а так же полный комплекс дорожной спец техники.
+                            Имеем два асфальтовых завода по разным берегам Новосибирска, имульсионую установку, а так же полный комплекс дорожной спец техники.
                         </PlainText>
                     </div>
                     <PointerButton>

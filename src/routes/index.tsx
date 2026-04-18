@@ -1,12 +1,19 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { HomeIntroductoryBanner } from '@/components/HomeIntroductoryBanner';
+import { HomeIntroductoryContainer } from '@/containers/HomeIntroductoryContainer';
 import { Menu } from '@/components/Menu';
+import { CompaniesSliderContainer } from '@/containers/CompaniesSliderContainer';
+import clsx from 'clsx';
 
 export const Home = () => {
     return (
         <div>
             <Menu />
-            <HomeIntroductoryBanner />
+            <div className={clsx(
+                'flex flex-col gap-8 md:gap-12'
+            )}>
+                <HomeIntroductoryContainer />
+                <CompaniesSliderContainer />
+            </div>
         </div>
     );
 }
