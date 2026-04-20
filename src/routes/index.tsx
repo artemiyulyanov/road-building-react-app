@@ -4,6 +4,7 @@ import { Menu } from '@/components/Menu';
 import { CompaniesSliderContainer } from '@/containers/CompaniesSliderContainer';
 import clsx from 'clsx';
 import { CollaborationContainer } from '@/containers/CollaborationContainer';
+import { LaboratoryControlContainer } from '@/containers/LaboratoryControlContainer';
 
 export const Home = () => {
     return (
@@ -15,6 +16,7 @@ export const Home = () => {
                 <HomeIntroductoryContainer />
                 <CompaniesSliderContainer />
                 <CollaborationContainer />
+                <LaboratoryControlContainer />
             </div>
         </div>
     );

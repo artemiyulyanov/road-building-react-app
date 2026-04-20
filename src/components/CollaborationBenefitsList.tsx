@@ -18,7 +18,7 @@ export const CollaborationBenefitsList: React.FC<CollaborationBenefitsListProps>
                 icon={
                     <BricksIcon
                         contentClassName={clsx(
-                            "relative h-10 md:h-12"
+                            "relative h-10 lg:h-12"
                         )}
                     />
                 }
@@ -30,7 +30,7 @@ export const CollaborationBenefitsList: React.FC<CollaborationBenefitsListProps>
                 icon={
                     <QuadIcon 
                         contentClassName={clsx(
-                            "relative h-14 md:h-16"
+                            "relative h-14 lg:h-16"
                         )}
                     />
                 }
@@ -42,7 +42,7 @@ export const CollaborationBenefitsList: React.FC<CollaborationBenefitsListProps>
                 icon={
                     <DeliveryIcon 
                         contentClassName={clsx(
-                            "relative h-10 md:h-12"
+                            "relative h-10 lg:h-12"
                         )}
                     />
                 }

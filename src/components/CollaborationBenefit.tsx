@@ -19,10 +19,12 @@ export const CollaborationBenefit: React.FC<CollaborationBenefitProps> = ({
         <div
             className={clsx(
                 "w-full h-auto md:aspect-[7/4] p-[25px] rounded-3xl",
-                "flex flex-col gap-6",
+                "flex flex-col gap-4 lg:gap-6",
                 (theme == "transparent") && 'bg-transparent border border-dark-2',
                 (theme == "light") && 'bg-light',
-                (theme == "yellow") && 'bg-primary'
+                (theme == "yellow") && 'bg-primary',
+                'transition-all duration-200',
+                'hover:scale-[1.035]'
             )}
         >
             {icon}
@@ -31,7 +33,7 @@ export const CollaborationBenefit: React.FC<CollaborationBenefitProps> = ({
             )}>
                 <PlainText
                     textClassName={clsx(
-                        "text-xl font-bold",
+                        "text-lg lg:text-xl font-bold",
                         "text-left leading-[0.95]",
                         (theme == 'transparent') ? "text-light" : "text-dark"
                     )}
