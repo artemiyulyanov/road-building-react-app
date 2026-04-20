@@ -8,12 +8,15 @@ import { DeliveryIcon } from "@/icons/DeliveryIcon";
 export type CollaborationBenefitsListProps = React.HTMLProps<HTMLDivElement>
 
 export const CollaborationBenefitsList: React.FC<CollaborationBenefitsListProps> = ({
-
+    ...props
 }) => {
     return (
-        <div className={clsx(
-            "flex flex-col md:flex-row gap-4 w-full"
-        )}>
+        <div 
+            className={clsx(
+                "flex flex-col md:flex-row gap-4 w-full"
+            )}
+            {...props}
+        >
             <CollaborationBenefit 
                 icon={
                     <BricksIcon

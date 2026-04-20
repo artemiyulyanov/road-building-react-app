@@ -2,6 +2,8 @@ import clsx from "clsx";
 import banner from '@/assets/introductory-banner.png';
 import { PlainText } from "@/ui/PlainText";
 import { PointerButton } from "@/ui/PointerButton";
+import { useRef } from "react";
+import { useAnimation } from "@/shared/useAnimation";
 
 export type HomeIntroductoryContainerProps = React.HTMLProps<HTMLDivElement> & {
 
@@ -25,17 +27,18 @@ export const HomeIntroductoryContainer: React.FC<HomeIntroductoryContainerProps>
         >
             <div className={clsx(
                 "h-full flex flex-col items-center justify-center relative",
-                'w-full',
+                'w-full md:w-1/2 lg:w-1/3',
                 'pt-[15px] pb-[15px] pl-[20px] pr-[20px] md:p-0',
             )}>
                 <div
                     className="flex flex-col gap-[40px] items-center"
-                > md:w-1/2 lg:w-1/3
+                > 
                     <div
                         className="flex flex-col gap-[10px] items-center"
                     >
                         <PlainText
                             textClassName={clsx(
+                                "whitespace-pre",
                                 "text-xs lg:text-sm font-bold",
                                 "bg-background color-dark",
                                 "pl-[10px] pr-[10px] pt-[5px] pb-[5px]",
