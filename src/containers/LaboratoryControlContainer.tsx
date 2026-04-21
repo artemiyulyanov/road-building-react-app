@@ -57,7 +57,7 @@ export const LaboratoryControlContainer: React.FC<LaboratoryControlContainerProp
                     "flex flex-row justify-between"
                 )}>
                     <div className={clsx(
-                        'flex flex-col justify-around gap-8 w-2/7 lg:w-1/4 h-full'
+                        'flex flex-col justify-between sm:justify-around gap-8 w-1/2 sm:w-2/7 lg:w-1/4 h-full'
                     )}>
                         <LaboratoryControlClause
                             // align="left"
@@ -74,15 +74,27 @@ export const LaboratoryControlContainer: React.FC<LaboratoryControlContainerProp
                         />
                     </div>
                     <div className={clsx(
-                        "w-1/4",
-                        "flex flex-col justify-center"
+                        "w-1/2 sm:w-1/4",
+                        "flex flex-col justify-end gap-16 sm:justify-center"
                     )}>
-                        <LaboratoryControlClause
-                            // align="right"
-                            items="right"
-                            number="02"
-                            text="Cвоевременный и поэтапный контроль избавляет в будущем от нецелесообразных затрат на вскрытие дорожной одежды"
-                        />
+                        <div className={clsx(
+                            "min-h-1/2 max-h-4/7",
+                            "flex flex-col gap-16"
+                        )}>
+                            <LaboratoryControlClause
+                                // align="right"
+                                items="right"
+                                number="02"
+                                text="Cвоевременный и поэтапный контроль избавляет в будущем от нецелесообразных затрат на вскрытие дорожной одежды"
+                            />
+                            <LaboratoryControlClause
+                                // align="right"
+                                items="left"
+                                number="03"
+                                wrapperClassName="sm:hidden"
+                                text="Благодаря профессионализму специалистов достигается высочайший уровень технологий, позволяющий получать композиционный материал с заранее заданными уникальными свойствами"
+                            />
+                        </div>
                     </div>
                     
                     {/* <LaboratoryControlClause
