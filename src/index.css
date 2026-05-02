@@ -29,6 +29,10 @@
   --color-primary: #FDC319;
   --color-dark: #0F0F0F; 
   --color-dark-2: #3E3E3E;
+  --color-dark-3: #1A1A1A;
+  --color-dark-4: #262626;
+  --color-dark-5: #444444;
+  --primary-foreground: #ff00ff;
 }
 
 @layer utilities {

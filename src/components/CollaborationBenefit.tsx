@@ -42,7 +42,7 @@ export const CollaborationBenefit: React.FC<CollaborationBenefitProps> = ({
                 </PlainText>
                 <PlainText
                     textClassName={clsx(
-                        "font-medium opacity-50 w-full h-auto whitespace-pre-line break-words",
+                        "font-medium opacity-40 w-full h-auto whitespace-pre-line break-words",
                         "text-left leading-[0.95]",
                         (theme == 'transparent') ? "text-light" : "text-dark"
                     )}

@@ -2,12 +2,12 @@ import { ButtonArrowIcon } from "@/icons/ButtonArrowIcon";
 import { Button, type ButtonProps } from "@heroui/react"
 import clsx from "clsx";
 
-export type PointerButtonProps = ButtonProps & {
+export type BaseButtonProps = ButtonProps & {
     buttonClassName?: string
     theme?: 'light' | 'primary' | 'dark'
 }
 
-export const PointerButton: React.FC<PointerButtonProps> = ({
+export const BaseButton: React.FC<BaseButtonProps> = ({
     children,
     buttonClassName,
     theme = 'light',
@@ -16,7 +16,7 @@ export const PointerButton: React.FC<PointerButtonProps> = ({
     return (
         <Button
             className={clsx(
-                "w-auto h-auto p-1 pl-3 rounded-full",
+                "w-auto h-auto px-[10px] py-[5px] rounded-full",
                 "font-bold tracking-[-0.025em] text-xs md:text-sm lg:text-sm",
                 "transition-all duration-300 hover:opacity-50",
                 "flex flex-row gap-2",
@@ -27,16 +27,7 @@ export const PointerButton: React.FC<PointerButtonProps> = ({
             )}
             {...props}
         >
-            <>
-                {children}
-                <div className={clsx(
-                    "p-3 rounded-full",
-                    (theme == 'light' || theme == 'primary') && "bg-dark",
-                    (theme == 'dark') && 'bg-light'
-                )}>
-                    <ButtonArrowIcon theme={theme} />
-                </div>
-            </>
+            {children}
         </Button>
     );
 }

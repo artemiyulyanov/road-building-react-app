@@ -13,7 +13,7 @@ export const PlainText: React.FC<PlainTextProps> = ({
     return (
         <span
             className={clsx(
-                "font-sans tracking-[-0.025em]",
+                "block font-sans tracking-[-0.025em]",
                 textClassName
             )}
             {...props}
