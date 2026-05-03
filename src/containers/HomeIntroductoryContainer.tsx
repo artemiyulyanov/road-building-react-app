@@ -4,6 +4,7 @@ import { PlainText } from "@/ui/PlainText";
 import { PointerButton } from "@/ui/PointerButton";
 import { useRef } from "react";
 import { useAnimation } from "@/shared/useAnimation";
+import { Link } from "@heroui/react";
 
 export type HomeIntroductoryContainerProps = React.HTMLProps<HTMLDivElement> & {
 
@@ -64,9 +65,14 @@ export const HomeIntroductoryContainer: React.FC<HomeIntroductoryContainerProps>
                             Имеем два асфальтовых завода по разным берегам Новосибирска, имульсионую установку, а так же полный комплекс дорожной спец техники.
                         </PlainText>
                     </div>
-                    <PointerButton>
-                        Оставить заявку
-                    </PointerButton>
+                    <Link
+                        href="#turnkey-asphalting-form"
+                        className="no-underline text-inherit"
+                    >
+                        <PointerButton>
+                            Оставить заявку
+                        </PointerButton>
+                    </Link>
                 </div>
                 <PlainText
                     textClassName={clsx(

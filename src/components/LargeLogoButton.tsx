@@ -5,15 +5,19 @@ import { PlainButton } from "../ui/PlainButton";
 import { useScroll } from "@/shared/useScroll";
 
 export type LargeLogoButtonProps = React.HTMLProps<HTMLDivElement> & {
-
+    isUnwrapped: boolean
+    setIsUnwrapped: React.Dispatch<React.SetStateAction<boolean>>
+    darkMode: boolean
 }
 
 export const LargeLogoButton: React.FC<LargeLogoButtonProps> = ({
-
+    isUnwrapped,
+    setIsUnwrapped,
+    darkMode
 }) => {
-    const scrolled = useScroll();
-
     const handleClick = () => {
+        setIsUnwrapped(false);
+        
         window.scrollTo({
             top: 0,
             behavior: "smooth",
@@ -25,7 +29,7 @@ export const LargeLogoButton: React.FC<LargeLogoButtonProps> = ({
             onClick={handleClick}
         >
             <LargeLogoIcon 
-                darkMode={scrolled}
+                darkMode={darkMode}
                 className={clsx(
                     "relative w-36 md:w-40"
                 )}

@@ -1,40 +1,37 @@
+import type { SitemapLink } from "@/entities/entities.types";
 import { LargeLogoIcon } from "@/icons/LargeLogoIcon";
 import { PlainButton } from "@/ui/PlainButton";
 import { PlainText } from "@/ui/PlainText";
 import { PointerButton } from "@/ui/PointerButton";
+import { Link } from "@heroui/react";
 import clsx from "clsx";
 
 export type FooterProps = React.HTMLProps<HTMLDivElement>
 
-export type SitemapLink = {
-    text: string
-    href: string
-}
-
 const footerSitemap: Array<SitemapLink> = [
     {
         text: "Наши клиенты",
-        href: ""
+        href: "#our-clients-container"
     },
     {
         text: "Чем мы занимаемся",
-        href: ""
+        href: "#collaboration-container"
     },
     {
         text: "Лаборатория",
-        href: ""
+        href: "#laboratory-container"
     },
     {
         text: "Аренда спецтехники",
-        href: ""
+        href: "#rent-equipment-container"
     },
     {
         text: "Асфальтирование под ключ",
-        href: ""
+        href: "#turnkey-asphalting-container"
     },
     {
         text: "Контакты",
-        href: ""
+        href: "#contacts-container"
     }
 ];
 
@@ -76,7 +73,10 @@ export const Footer: React.FC<FooterProps> = ({
                             Оставьте заявку на покладку асфальта
                         </PlainText>
                     </div>
-                    <div>
+                    <Link
+                        href="#turnkey-asphalting-form"
+                        className="no-underline text-inherit"
+                    >
                         <PointerButton 
                             theme="primary"
                             buttonClassName={clsx(
@@ -87,7 +87,7 @@ export const Footer: React.FC<FooterProps> = ({
                                 Оставить заявку
                             </div>
                         </PointerButton>
-                    </div>
+                    </Link>
                 </div>
                 <div className="w-full flex flex-col pt-2">
                     <div className={clsx(
@@ -95,18 +95,22 @@ export const Footer: React.FC<FooterProps> = ({
                         "border-l border-l-1 border-light/25 pl-2 pb-2"
                     )}>
                         {footerSitemap.map(link =>
-                            <PlainButton
-                                // onClick={handleClick}
+                            <Link
+                                href={link.href}
+                                className="no-underline text-inherit"
                             >
-                                <PlainText
-                                    textClassName={clsx(
-                                        "relative font-medium break-words",
-                                        "text-sm xl:text-base leading-[0.95] text-light"
-                                    )}
+                                <PlainButton
                                 >
-                                    {link.text}
-                                </PlainText>
-                            </PlainButton>
+                                    <PlainText
+                                        textClassName={clsx(
+                                            "relative font-medium break-words",
+                                            "text-sm xl:text-base leading-[0.95] text-light"
+                                        )}
+                                    >
+                                        {link.text}
+                                    </PlainText>
+                                </PlainButton>
+                            </Link>
                         )}
                     </div>
                 </div>

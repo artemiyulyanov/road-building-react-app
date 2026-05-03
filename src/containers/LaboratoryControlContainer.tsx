@@ -20,6 +20,7 @@ export const LaboratoryControlContainer: React.FC<LaboratoryControlContainerProp
             className={clsx(
                 "relative grid w-full"
             )}
+            id="laboratory-container"
         >
             <div
                 className={clsx(

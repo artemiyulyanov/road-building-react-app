@@ -65,4 +65,5 @@
 
 html, body {
   background-color: var(--color-dark);
+  scroll-behavior: smooth;
 }

@@ -1,13 +1,9 @@
+import type { Contact } from "@/entities/entities.types";
 import { PlainText } from "@/ui/PlainText";
 import clsx from "clsx";
 
 export type ContactClauseProps = React.HTMLProps<HTMLDivElement> & {
-    clause: ContactClause
-}
-
-export type ContactClause = {
-    text: string
-    subtext: Array<string>
+    clause: Contact
 }
 
 export const ContactClause: React.FC<ContactClauseProps> = ({

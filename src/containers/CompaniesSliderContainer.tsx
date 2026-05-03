@@ -7,10 +7,13 @@ export const CompaniesSliderContainer: React.FC<CompaniesSliderContainerProps> =
 
 }) => {
     return (
-        <div className={clsx(
-            'w-full',
-            'pl-[20px] pr-[20px] md:pl-[40px] md:pr-[40px]',
-        )}>
+        <div 
+            className={clsx(
+                'w-full',
+                'pl-[20px] pr-[20px] md:pl-[40px] md:pr-[40px]',
+            )}
+            id="our-clients-container"
+        >
             <CompaniesSlider />
         </div>
     );

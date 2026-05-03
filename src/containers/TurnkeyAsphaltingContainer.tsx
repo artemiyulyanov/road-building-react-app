@@ -23,6 +23,7 @@ const TurnkeyAsphaltingDekstopMode: React.FC<TurnkeyAsphaltingDekstopModeProps> 
                 "w-full h-auto z-999",
                 "flex flex-col gap-4 hidden sm:grid" 
             )}
+            id="turnkey-asphalting-container"
         >
             <img 
                 src={banner} 

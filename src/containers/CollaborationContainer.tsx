@@ -20,6 +20,7 @@ export const CollaborationContainer: React.FC<CollaborationContainerProps> = ({
                 "pl-[20px] pr-[20px] md:pl-[40px] md:pr-[40px] w-full",
                 "flex flex-col gap-4 md:gap-6"
             )}
+            id="collaboration-container"
         >
             <div className="flex flex-row items-center gap-2">
                 <ThunderboltIcon 

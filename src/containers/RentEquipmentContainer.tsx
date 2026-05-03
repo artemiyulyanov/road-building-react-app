@@ -15,6 +15,7 @@ export const RentEquipmentContainer: React.FC<RentEquipmentContainerProps> = ({
                 "grid w-full h-auto z-999",
                 "flex flex-col gap-4" 
             )}
+            id="rent-equipment-container"
         >
             <img 
                 src={banner} 

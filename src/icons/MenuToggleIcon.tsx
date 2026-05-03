@@ -14,15 +14,15 @@ import { useScroll } from '@/shared/useScroll';
 export type MenuToggleIconProps = React.HTMLProps<HTMLDivElement> & {
     unwrapped?: boolean
     contentClassName?: string
+    darkMode: boolean
 }
 
 export const MenuToggleIcon: React.FC<MenuToggleIconProps> = ({
     unwrapped = false,
     contentClassName,
+    darkMode,
     ...props
 }) => {
-    const scrolled = useScroll();
-
     return (
         <div
             {...props}
@@ -37,8 +37,8 @@ export const MenuToggleIcon: React.FC<MenuToggleIconProps> = ({
                         "w-3 aspect-square",
                         "animate-[rotate-in_0.1s_ease-out_forwards]",
                         "transition-all duration-200",
-                        !scrolled && 'fill-light',
-                        scrolled && 'fill-dark',
+                        !darkMode && 'fill-light',
+                        darkMode && 'fill-dark',
                         contentClassName
                     )}
                 >
@@ -54,8 +54,8 @@ export const MenuToggleIcon: React.FC<MenuToggleIconProps> = ({
                         "w-4 aspect-square",
                         "animate-[rotate-in_0.1s_ease-out_forwards]",
                         "transition-all duration-200",
-                        !scrolled && 'fill-light',
-                        scrolled && 'fill-dark',
+                        !darkMode && 'fill-light',
+                        darkMode && 'fill-dark',
                         contentClassName
                     )}
                 >

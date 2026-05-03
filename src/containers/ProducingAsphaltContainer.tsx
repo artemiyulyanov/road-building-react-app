@@ -3,6 +3,7 @@ import clsx from "clsx";
 import banner from "@/assets/asphalt-machine.png";
 import { PlainText } from "@/ui/PlainText";
 import { PointerButton } from "@/ui/PointerButton";
+import { Link } from "@heroui/react";
 
 export type ProducingAsphaltContainerProps = React.HTMLProps<HTMLDivElement>
 
@@ -80,7 +81,10 @@ export const ProducingAsphaltContainer: React.FC<ProducingAsphaltContainerProps>
                                     </PlainText>
                                 </div>
                             </div>
-                            <div>
+                            <Link 
+                                href="#turnkey-asphalting-form"
+                                className="no-underline text-inherit"
+                            >
                                 <PointerButton 
                                     theme="dark"
                                     buttonClassName={clsx(
@@ -91,7 +95,7 @@ export const ProducingAsphaltContainer: React.FC<ProducingAsphaltContainerProps>
                                         Оставить заявку
                                     </div>
                                 </PointerButton>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

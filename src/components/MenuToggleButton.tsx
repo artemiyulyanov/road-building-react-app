@@ -4,35 +4,40 @@ import { useState } from "react";
 import clsx from "clsx";
 import { PlainText } from "@/ui/PlainText";
 import { useScroll } from "@/shared/useScroll";
+import { Popover } from "@heroui/react";
 
-export type MenuToggleButtonProps = React.HTMLProps<HTMLDivElement>
+export type MenuToggleButtonProps = React.HTMLProps<HTMLDivElement> & {
+    isUnwrapped: boolean
+    setIsUnwrapped: React.Dispatch<React.SetStateAction<boolean>>
+    darkMode: boolean
+}
 
 export const MenuToggleButton: React.FC<MenuToggleButtonProps> = ({
-
+    isUnwrapped,
+    setIsUnwrapped,
+    darkMode
 }) => {
-    const [isUnwrapped, setIsUnwrapped] = useState<boolean>(false);
-    const scrolled = useScroll();
-
     const handleClick = () => {
         setIsUnwrapped((isUnwrapped) => !isUnwrapped);
     }
 
     return (
-        <div className="flex items-center">
+        <div className="flex flex-col justify-center items-center">
             <PlainButton
                 onClick={handleClick}
             >
                 <MenuToggleIcon
                     contentClassName="scale-125 md:scale-100"
-                    unwrapped={isUnwrapped}           
+                    unwrapped={isUnwrapped}
+                    darkMode={darkMode}         
                 />
                 <PlainText
                     textClassName={clsx(
                         "text-base font-bold",
                         "hidden md:block",
                         "transition-all duration-200",
-                        !scrolled && 'text-light',
-                        scrolled && 'text-dark'
+                        !darkMode && 'text-light',
+                        darkMode && 'text-dark'
                     )}
                 >
                     Меню

@@ -1,10 +1,11 @@
 import { ContactClause } from "@/components/ContactClause";
+import type { Contact } from "@/entities/entities.types";
 import { PlainText } from "@/ui/PlainText";
 import clsx from "clsx";
 
 export type ContactsContainerProps = React.HTMLProps<HTMLDivElement>
 
-const contacts: Array<ContactClause> = [
+const contacts: Array<Contact> = [
     {
         text: "Левый берег",
         subtext: ["с. Толмачево, 3307 километр, 20/2"]
@@ -31,10 +32,13 @@ export const ContactsContainer = ({
     
 }) => {
     return (
-        <div className={clsx(
-            "w-full h-auto",
-            "pl-[20px] pr-[20px] md:pl-[40px] md:pr-[40px]"
-        )}>
+        <div 
+            className={clsx(
+                "w-full h-auto",
+                "pl-[20px] pr-[20px] md:pl-[40px] md:pr-[40px]"
+            )}
+            id="contacts-container"
+        >
             <div className={clsx(
                 "w-full rounded-3xl",
                 "flex flex-col gap-8"
