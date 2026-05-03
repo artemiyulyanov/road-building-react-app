@@ -1,6 +1,6 @@
 import { BaseButton } from "@/ui/BaseButton";
 import { BaseRadio } from "@/ui/BaseRadio";
-import { Description, Input, Label, RadioGroup, Spinner, TextArea } from "@heroui/react";
+import { Description, FieldError, Input, Label, RadioGroup, Spinner, TextArea, TextField } from "@heroui/react";
 import clsx from "clsx";
 import { Controller, useForm } from "react-hook-form";
 
@@ -87,7 +87,7 @@ export const TurnkeyAsphaltingForm: React.FC<TurnkeyAsphaltingFormProps> = ({
                             )}
                         />
                     </div>
-                    <div className="flex flex-col gap-1">
+                    <TextField className="flex flex-col gap-1" isInvalid={errors.contact != undefined}>
                         <Label 
                             className="font-medium text-sm text-light" 
                             htmlFor="input-contact"
@@ -104,8 +104,6 @@ export const TurnkeyAsphaltingForm: React.FC<TurnkeyAsphaltingFormProps> = ({
                             )}
                             minLength={1}
                             maxLength={250}
-                            // validationState={!!errors.email}
-                            // errorMessage={errors.email?.message}
                             {...register(
                                 "contact", 
                                 { 
@@ -121,8 +119,9 @@ export const TurnkeyAsphaltingForm: React.FC<TurnkeyAsphaltingFormProps> = ({
                                 }
                             )}
                         />
-                    </div>
-                    <div className="flex flex-col gap-1">
+                        <FieldError className="font-medium">{errors.contact?.message}</FieldError>
+                    </TextField>
+                    <TextField className="flex flex-col gap-1" isInvalid={errors.description != undefined}>
                         <Label 
                             className="font-medium text-sm text-light" 
                             htmlFor="input-description"
@@ -156,10 +155,11 @@ export const TurnkeyAsphaltingForm: React.FC<TurnkeyAsphaltingFormProps> = ({
                                 }
                             )}
                         />
+                        <FieldError className="font-medium">{errors.description?.message}</FieldError>
                         <Description className="font-medium text-light/25">
                             Символов: {watch('description') != undefined ? watch('description').length : 0} / 1000
                         </Description>
-                    </div>
+                    </TextField>
                 </div>
                 <div className={clsx(
                     "w-full h-auto",
@@ -169,7 +169,7 @@ export const TurnkeyAsphaltingForm: React.FC<TurnkeyAsphaltingFormProps> = ({
                         "w-full h-auto",
                         'flex flex-col gap-4'
                     )}>
-                        <div className="flex flex-col gap-1">
+                        <TextField className="flex flex-col gap-1" isInvalid={errors.weight != undefined}>
                             <Label 
                                 className="font-medium text-sm text-light" 
                                 htmlFor="input-weight"
@@ -203,9 +203,10 @@ export const TurnkeyAsphaltingForm: React.FC<TurnkeyAsphaltingFormProps> = ({
                                     }
                                 )}
                             />
-                        </div>
-                        <div className="flex flex-col md:flex-row items-end gap-4 md:gap-2">
-                            <div className="w-full flex flex-col gap-1">
+                            <FieldError className="font-medium">{errors.weight?.message}</FieldError>
+                        </TextField>
+                        <div className="flex flex-col md:flex-row items-start gap-4 md:gap-2">
+                            <TextField className="w-full flex flex-col gap-1" isInvalid={errors.organization != undefined}>
                                 <Label 
                                     className="font-medium text-sm text-light" 
                                     htmlFor="input-organization"
@@ -237,8 +238,9 @@ export const TurnkeyAsphaltingForm: React.FC<TurnkeyAsphaltingFormProps> = ({
                                         }
                                     )}
                                 />
-                            </div>
-                            <div className="w-full flex flex-col gap-1">
+                                <FieldError className="font-medium">{errors.organization?.message}</FieldError>
+                            </TextField>
+                            <TextField className="w-full flex flex-col gap-1" isInvalid={errors.taxNumber != undefined}>
                                 <Label 
                                     className="font-medium text-sm text-light" 
                                     htmlFor="input-tax-number"
@@ -272,7 +274,8 @@ export const TurnkeyAsphaltingForm: React.FC<TurnkeyAsphaltingFormProps> = ({
                                         }
                                     )}
                                 />
-                            </div>
+                                <FieldError className="font-medium">{errors.taxNumber?.message}</FieldError>
+                            </TextField>
                         </div>
                     </div>
                     <div className="flex flex-row justify-end">
