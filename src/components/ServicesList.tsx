@@ -1,4 +1,4 @@
-import type { Service } from "@/entities/service";
+import type { Service } from "@/entities/entities.types";
 import clsx from "clsx";
 import { ServiceCard } from "./ServiceCard";
 

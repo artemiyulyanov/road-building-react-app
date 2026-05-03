@@ -1,4 +1,4 @@
-import type { Service } from "@/entities/service";
+import type { Service } from "@/entities/entities.types";
 import { BaseButton } from "@/ui/BaseButton";
 import { PlainText } from "@/ui/PlainText";
 import clsx from "clsx";
