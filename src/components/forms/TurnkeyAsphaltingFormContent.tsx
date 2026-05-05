@@ -1,3 +1,4 @@
+import { postTurnkeyAsphaltForm } from "@/api/api.endpoints";
 import { asphaltTypes, isAsphaltType, type TurnkeyAsphaltFormData } from "@/entities/entities.types";
 import { BaseButton } from "@/ui/BaseButton";
 import { BaseRadio } from "@/ui/BaseRadio";
@@ -33,13 +34,7 @@ export const TurnkeyAsphaltingFormContent: React.FC<TurnkeyAsphaltingFormContent
             type: (isAsphaltType(data.type)) ? asphaltTypes[data.type] : data.type
         };
 
-        const res = await fetch("http://localhost:8000/api/v1/turnkey-asphalt-lead", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(payload),
-        });
+        const res = await postTurnkeyAsphaltForm(payload);
 
         setSubmissionStatus(res.status);
     }
