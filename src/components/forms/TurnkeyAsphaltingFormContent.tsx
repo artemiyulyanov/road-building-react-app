@@ -39,7 +39,8 @@ export const TurnkeyAsphaltingFormContent: React.FC<TurnkeyAsphaltingFormContent
 
             setSubmissionStatus(res.status);
         } catch (error) {
-            setSubmissionStatus(501);
+            console.log(error);
+            setSubmissionStatus(0);
         }
     }
 
