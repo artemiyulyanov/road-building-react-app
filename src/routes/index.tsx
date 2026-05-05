@@ -7,7 +7,7 @@ import { CollaborationContainer } from '@/containers/CollaborationContainer';
 import { LaboratoryControlContainer } from '@/containers/LaboratoryControlContainer';
 import { ProducingAsphaltContainer } from '@/containers/ProducingAsphaltContainer';
 import { RentEquipmentContainer } from '@/containers/RentEquipmentContainer';
-import { TurnkeyAsphaltingForm } from '@/components/TurnkeyAsphaltingForm';
+import { TurnkeyAsphaltingForm } from '@/components/forms/TurnkeyAsphaltingForm';
 import { TurnkeyAsphaltingContainer } from '@/containers/TurnkeyAsphaltingContainer';
 import { ContactsContainer } from '@/containers/ContactsContainer';
 import { Footer } from '@/containers/Footer';

@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 export type BaseButtonProps = ButtonProps & {
     buttonClassName?: string
-    theme?: 'light' | 'primary' | 'dark'
+    theme?: 'light' | 'primary' | 'dark' | 'transparent'
 }
 
 export const BaseButton: React.FC<BaseButtonProps> = ({
@@ -22,6 +22,7 @@ export const BaseButton: React.FC<BaseButtonProps> = ({
                 "flex flex-row gap-2",
                 (theme == 'light') && "bg-light text-dark",
                 (theme == 'dark') && "bg-dark text-light",
+                (theme == 'transparent') && "bg-dark-4 text-light/50",
                 (theme == 'primary') && "bg-primary text-dark",
                 buttonClassName
             )}
