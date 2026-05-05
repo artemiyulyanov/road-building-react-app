@@ -29,14 +29,18 @@ export const TurnkeyAsphaltingFormContent: React.FC<TurnkeyAsphaltingFormContent
     });
 
     const onSubmit = async (data: TurnkeyAsphaltFormData) => {
-        const payload = {
-            ...data,
-            type: (isAsphaltType(data.type)) ? asphaltTypes[data.type] : data.type
-        };
+        try {
+            const payload = {
+                ...data,
+                type: (isAsphaltType(data.type)) ? asphaltTypes[data.type] : data.type
+            };
 
-        const res = await postTurnkeyAsphaltForm(payload);
+            const res = await postTurnkeyAsphaltForm(payload);
 
-        setSubmissionStatus(res.status);
+            setSubmissionStatus(res.status);
+        } catch (error) {
+            setSubmissionStatus(501);
+        }
     }
 
     const onError = (errors: any) => {
