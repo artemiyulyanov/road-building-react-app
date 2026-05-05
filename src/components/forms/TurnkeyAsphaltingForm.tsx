@@ -14,7 +14,7 @@ export type TurnkeyAsphaltingFormProps = React.HTMLProps<HTMLDivElement>
 export const TurnkeyAsphaltingForm: React.FC<TurnkeyAsphaltingFormProps> = ({
 
 }) => {
-    const [submissionStatus, setSubmissionStatus] = useState<number | undefined>(200);
+    const [submissionStatus, setSubmissionStatus] = useState<number | undefined>();
 
     return (
         <div className={clsx(
