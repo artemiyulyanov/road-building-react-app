@@ -25,7 +25,8 @@ export const TurnkeyAsphaltingFormContent: React.FC<TurnkeyAsphaltingFormContent
     } = useForm<TurnkeyAsphaltFormData>({
         defaultValues: {
             type: "a"
-        }
+        },
+        mode: 'onChange'
     });
 
     const onSubmit = async (data: TurnkeyAsphaltFormData) => {
@@ -145,8 +146,8 @@ export const TurnkeyAsphaltingFormContent: React.FC<TurnkeyAsphaltingFormContent
                             { 
                                 required: "Введите уточняющие подробности", 
                                 minLength: { 
-                                    value: 20, 
-                                    message: "Минимум 20 символов" 
+                                    value: 4, 
+                                    message: "Минимум 4 символа!" 
                                 }, 
                                 maxLength: { 
                                     value: 1000, 
@@ -174,21 +175,22 @@ export const TurnkeyAsphaltingFormContent: React.FC<TurnkeyAsphaltingFormContent
                             className="font-medium text-sm text-light" 
                             htmlFor="input-weight"
                         >
-                            Укажите кол-во асфальта
+                            Укажите кол-во асфальта (тонн)
                         </Label>
                         <Input 
                             id="input-weight" 
-                            placeholder="кг" 
+                            placeholder="тонны" 
                             type="number"
                             className={clsx(
                                 "bg-dark-4",
                                 "font-medium text-light placeholder:text-light/25",
-                                "focus:outline-none focus:ring-0"
+                                "focus:outline-none focus:ring-0",
+                                "[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                             )}
                             {...register(
                                 "weight", 
                                 { 
-                                    required: "Введите количество килограмм!", 
+                                    required: "Введите количество тонн!", 
                                     minLength: { 
                                         value: 1, 
                                         message: "Минимум 1 символ!" 
@@ -196,8 +198,7 @@ export const TurnkeyAsphaltingFormContent: React.FC<TurnkeyAsphaltingFormContent
                                     maxLength: { 
                                         value: 10, 
                                         message: "Не более 10 символов!" 
-                                    },
-                                    valueAsNumber: true
+                                    }
                                 }
                             )}
                         />
@@ -249,7 +250,8 @@ export const TurnkeyAsphaltingFormContent: React.FC<TurnkeyAsphaltingFormContent
                                 className={clsx(
                                     "bg-dark-4",
                                     "font-medium text-light placeholder:text-light/25",
-                                    "focus:outline-none focus:ring-0"
+                                    "focus:outline-none focus:ring-0",
+                                    "[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                                 )}
                                 type="number"
                                 {...register(
@@ -257,12 +259,12 @@ export const TurnkeyAsphaltingFormContent: React.FC<TurnkeyAsphaltingFormContent
                                     { 
                                         required: "Введите ИНН!", 
                                         minLength: { 
-                                            value: 16, 
-                                            message: "ИНН должен быть 16 символов!" 
+                                            value: 10, 
+                                            message: "ИНН должен быть от 10 до 12 символов!" 
                                         }, 
                                         maxLength: { 
-                                            value: 16, 
-                                            message: "ИНН должен быть 16 символов!" 
+                                            value: 12, 
+                                            message: "ИНН должен быть от 10 до 12 символов!" 
                                         },
                                         pattern: {
                                             value: /^[0-9]+$/,
