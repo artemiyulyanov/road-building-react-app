@@ -1,5 +1,6 @@
 import type { SitemapLink } from "@/entities/entities.types";
 import { LargeLogoIcon } from "@/icons/LargeLogoIcon";
+import { useAnchorMenu } from "@/shared/useAnchorMenu";
 import { PlainButton } from "@/ui/PlainButton";
 import { PlainText } from "@/ui/PlainText";
 import { PointerButton } from "@/ui/PointerButton";
@@ -11,27 +12,27 @@ export type FooterProps = React.HTMLProps<HTMLDivElement>
 const footerSitemap: Array<SitemapLink> = [
     {
         text: "Наши клиенты",
-        href: "#our-clients-container"
+        scrollTo: useAnchorMenu("our-clients-container")
     },
     {
         text: "Чем мы занимаемся",
-        href: "#collaboration-container"
+        scrollTo: useAnchorMenu("collaboration-container")
     },
     {
         text: "Лаборатория",
-        href: "#laboratory-container"
+        scrollTo: useAnchorMenu("laboratory-container")
     },
     {
         text: "Аренда спецтехники",
-        href: "#rent-equipment-container"
+        scrollTo: useAnchorMenu("rent-equipment-container")
     },
     {
         text: "Асфальтирование под ключ",
-        href: "#turnkey-asphalting-container"
+        scrollTo: useAnchorMenu("turnkey-asphalting-container")
     },
     {
         text: "Контакты",
-        href: "#contacts-container"
+        scrollTo: useAnchorMenu("contacts-container")
     }
 ];
 
@@ -96,8 +97,9 @@ export const Footer: React.FC<FooterProps> = ({
                     )}>
                         {footerSitemap.map(link =>
                             <Link
-                                href={link.href}
+                                // href={link.href}
                                 className="no-underline text-inherit"
+                                onClickCapture={() => scrollTo()}
                             >
                                 <PlainButton
                                 >

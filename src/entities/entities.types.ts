@@ -11,7 +11,7 @@ export type Service = {
 
 export type SitemapLink = {
     text: string
-    href: string
+    scrollTo: () => void
 }
 
 export type TurnkeyAsphaltFormData = {

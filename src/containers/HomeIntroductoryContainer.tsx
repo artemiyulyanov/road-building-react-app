@@ -18,7 +18,7 @@ export const HomeIntroductoryContainer: React.FC<HomeIntroductoryContainerProps>
             className={clsx(
                 "max-w-screen bg-center bg-no-repeat relative",
                 "h-[95vh] md:h-screen",
-                "bg-[length:110%_auto] md:bg-[length:110%_auto]",
+                "bg-cover md:bg-[length:110%_auto]",
                 "rounded-b-3xl",
                 "flex items-center justify-center",
             )}

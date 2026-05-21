@@ -2,36 +2,37 @@ import clsx from "clsx";
 import { LargeLogoButton } from "./LargeLogoButton";
 import { MenuToggleButton } from "./MenuToggleButton";
 import { useScroll } from "@/shared/useScroll";
-import { useState } from "react";
+import { use, useState } from "react";
 import { PlainText } from "@/ui/PlainText";
 import { Link } from "@heroui/react";
 import { PlainButton } from "@/ui/PlainButton";
 import type { SitemapLink } from "@/entities/entities.types";
+import { useAnchorMenu } from "@/shared/useAnchorMenu";
 
 const menuSitemap: Array<SitemapLink> = [
     {
         text: "Наши клиенты",
-        href: "#our-clients-container"
+        scrollTo: useAnchorMenu("our-clients-container")
     },
     {
         text: "Чем мы занимаемся",
-        href: "#collaboration-container"
+        scrollTo: useAnchorMenu("collaboration-container")
     },
     {
         text: "Лаборатория",
-        href: "#laboratory-container"
+        scrollTo: useAnchorMenu("laboratory-container")
     },
     {
         text: "Аренда спецтехники",
-        href: "#rent-equipment-container"
+        scrollTo: useAnchorMenu("rent-equipment-container")
     },
     {
         text: "Асфальтирование под ключ",
-        href: "#turnkey-asphalting-container"
+        scrollTo: useAnchorMenu("turnkey-asphalting-container")
     },
     {
         text: "Контакты",
-        href: "#contacts-container"
+        scrollTo: useAnchorMenu("contacts-container")
     }
 ];
 
@@ -81,9 +82,12 @@ export const Menu = () => {
                 )}>
                     {menuSitemap.map(link =>
                         <Link
-                            href={link.href}
+                            // href={link.href}
                             className="no-underline text-inherit"
-                            onClickCapture={() => setIsUnwrapped(false)}
+                            onClickCapture={() => {
+                                setIsUnwrapped(false)
+                                link.scrollTo();
+                            }}
                         >
                             <PlainButton hoverEffects={false}>
                                 <PlainText
