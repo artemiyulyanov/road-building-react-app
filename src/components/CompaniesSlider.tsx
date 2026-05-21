@@ -19,7 +19,7 @@ export const CompaniesSlider: React.FC<CompaniesSliderProps> = ({
         vis_group_icon,
         sibeco_icon,
         blossom_icon,
-        swifts_group_icon
+        // swifts_group_icon
     ];
 
     const loopItems = [...items, ...items, ...items, ...items, ...items, ...items, ...items, ...items];
