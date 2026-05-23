@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import vis_group_icon from '@/assets/vis-group-icon.png';
 import sibeco_icon from '@/assets/sibeco-icon.png';
 import blossom_icon from '@/assets/blossom-icon.png';
+import polyakov_icon from '@/assets/polyakov-icon.png';
+import gorvodokanal_icon from '@/assets/gorvodokanal-icon.png'
 import swifts_group_icon from '@/assets/swifts-group-icon.png';
 
 export type CompaniesSliderProps = React.HTMLProps<HTMLDivElement>
@@ -19,6 +21,8 @@ export const CompaniesSlider: React.FC<CompaniesSliderProps> = ({
         vis_group_icon,
         sibeco_icon,
         blossom_icon,
+        polyakov_icon,
+        gorvodokanal_icon
         // swifts_group_icon
     ];
 
