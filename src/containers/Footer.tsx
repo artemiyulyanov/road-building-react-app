@@ -39,6 +39,8 @@ const footerSitemap: Array<SitemapLink> = [
 export const Footer: React.FC<FooterProps> = ({
 
 }) => {
+    const scrollToTurnkeyAsphaltingForm = useAnchorMenu('turnkey-asphalting-form')
+
     return (
         <div className={clsx(
             "w-full h-auto p-4"
@@ -75,8 +77,9 @@ export const Footer: React.FC<FooterProps> = ({
                         </PlainText>
                     </div>
                     <Link
-                        href="#turnkey-asphalting-form"
+                        // href="#turnkey-asphalting-form"
                         className="no-underline text-inherit"
+                        onClickCapture={scrollToTurnkeyAsphaltingForm}
                     >
                         <PointerButton 
                             theme="primary"

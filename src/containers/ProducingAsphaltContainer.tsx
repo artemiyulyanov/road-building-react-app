@@ -4,12 +4,15 @@ import banner from "@/assets/asphalt-machine.png";
 import { PlainText } from "@/ui/PlainText";
 import { PointerButton } from "@/ui/PointerButton";
 import { Link } from "@heroui/react";
+import { useAnchorMenu } from "@/shared/useAnchorMenu";
 
 export type ProducingAsphaltContainerProps = React.HTMLProps<HTMLDivElement>
 
 export const ProducingAsphaltContainer: React.FC<ProducingAsphaltContainerProps> = ({
 
 }) => {
+    const scrollToTurnkeyAsphaltingForm = useAnchorMenu('turnkey-asphalting-form')
+
     return (
         <div
             className={clsx(
@@ -82,8 +85,9 @@ export const ProducingAsphaltContainer: React.FC<ProducingAsphaltContainerProps>
                                 </div>
                             </div>
                             <Link 
-                                href="#turnkey-asphalting-form"
+                                // href="#turnkey-asphalting-form"
                                 className="no-underline text-inherit"
+                                onClickCapture={scrollToTurnkeyAsphaltingForm}
                             >
                                 <PointerButton 
                                     theme="dark"

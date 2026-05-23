@@ -5,6 +5,7 @@ import { PointerButton } from "@/ui/PointerButton";
 import { useRef } from "react";
 import { useAnimation } from "@/shared/useAnimation";
 import { Link } from "@heroui/react";
+import { useAnchorMenu } from "@/shared/useAnchorMenu";
 
 export type HomeIntroductoryContainerProps = React.HTMLProps<HTMLDivElement> & {
 
@@ -13,6 +14,8 @@ export type HomeIntroductoryContainerProps = React.HTMLProps<HTMLDivElement> & {
 export const HomeIntroductoryContainer: React.FC<HomeIntroductoryContainerProps> = ({
     ...props
 }) => {
+    const scrollToTurnkeyAsphaltingForm = useAnchorMenu('turnkey-asphalting-form');
+
     return (
         <div
             className={clsx(
@@ -66,8 +69,9 @@ export const HomeIntroductoryContainer: React.FC<HomeIntroductoryContainerProps>
                         </PlainText>
                     </div>
                     <Link
-                        href="#turnkey-asphalting-form"
+                        // href="#turnkey-asphalting-form"
                         className="no-underline text-inherit"
+                        onClickCapture={scrollToTurnkeyAsphaltingForm}
                     >
                         <PointerButton>
                             Оставить заявку
