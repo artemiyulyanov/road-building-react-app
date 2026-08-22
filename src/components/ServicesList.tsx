@@ -6,7 +6,7 @@ import roller_service_card from "@/assets/roller-service-card.png";
 import loader_service_card from "@/assets/loader-service-card.png";
 import zil_service_card from "@/assets/zil-service-card.png";
 import paver_service_card from "@/assets/paver-service-card.png";
-import cutter_service_card from "@/assets/cutter-service-card.png";
+import gudronator_service_card from "@/assets/gudronator-service-card.png";
 import compressor_service_card from "@/assets/compressor-service-card.png";
 
 export type ServicesListProps = React.HTMLProps<HTMLDivElement> & {
@@ -35,9 +35,9 @@ const services: Array<Service> = [
         iconPath: paver_service_card
     },
     {
-        title: "Аренда фрезы",
-        description: "В наличии марки WIRTGEN и SUNY",
-        iconPath: cutter_service_card
+        title: "Аренда гудронатора",
+        description: "В наличии гудронаторы для дорожных работ",
+        iconPath: gudronator_service_card
     },
     {
         title: "Airman компрессор",
