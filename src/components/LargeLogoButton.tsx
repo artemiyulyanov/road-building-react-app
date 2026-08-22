@@ -1,8 +1,6 @@
 import { LargeLogoIcon } from "@/icons/LargeLogoIcon";
-import { Button } from "@heroui/react";
 import clsx from "clsx";
 import { PlainButton } from "../ui/PlainButton";
-import { useScroll } from "@/shared/useScroll";
 
 export type LargeLogoButtonProps = React.HTMLProps<HTMLDivElement> & {
     isUnwrapped: boolean
@@ -31,7 +29,7 @@ export const LargeLogoButton: React.FC<LargeLogoButtonProps> = ({
             <LargeLogoIcon 
                 darkMode={darkMode}
                 className={clsx(
-                    "relative w-36 md:w-40"
+                    "relative w-72 md:w-80"
                 )}
             />
         </PlainButton>

@@ -2,12 +2,13 @@ import clsx from "clsx";
 import { LargeLogoButton } from "./LargeLogoButton";
 import { MenuToggleButton } from "./MenuToggleButton";
 import { useScroll } from "@/shared/useScroll";
-import { use, useState } from "react";
+import { useState } from "react";
 import { PlainText } from "@/ui/PlainText";
 import { Link } from "@heroui/react";
 import { PlainButton } from "@/ui/PlainButton";
 import type { SitemapLink } from "@/entities/entities.types";
 import { useAnchorMenu } from "@/shared/useAnchorMenu";
+import menuBg from "@/assets/menu-background.png";
 
 const menuSitemap: Array<SitemapLink> = [
     {
@@ -46,27 +47,46 @@ export const Menu = () => {
                 'fixed overflow-visible w-full z-[999999999]',
                 'pt-[15px] pb-[15px] pl-[20px] pr-[20px]',
                 "flex flex-col items-start gap-4",
-                "transparent-all duration-200",
-                (!scrolled && !isUnwrapped) && 'bg-transparent',
-                (scrolled || isUnwrapped) && 'bg-light',
+                "transition-all duration-200",
                 !isUnwrapped && 'h-auto',
                 isUnwrapped && 'h-screen'
             )}
+            style={{
+                backgroundColor: (!scrolled && !isUnwrapped) ? 'transparent' : 'var(--color-light)',
+            }}
         >
-            <div className="w-full flex flex-row items-center justify-between">
+            {isUnwrapped && (
+                <div
+                    className="absolute inset-0 z-0"
+                    style={{
+                        backgroundImage: `url(${menuBg})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        animation: 'fadeIn 0.4s ease forwards',
+                    }}
+                />
+            )}
+            {isUnwrapped && (
+                <div
+                    className="absolute inset-0 z-[1]"
+                    style={{ backgroundColor: 'rgba(255,255,255,0.65)' }}
+                />
+            )}
+            <div className="relative z-10 w-full flex flex-row items-center justify-between">
                 <LargeLogoButton
                     isUnwrapped={isUnwrapped}
                     setIsUnwrapped={setIsUnwrapped}
-                    darkMode={scrolled || isUnwrapped} 
+                    darkMode={scrolled || isUnwrapped}
                 />
-                <MenuToggleButton 
+                <MenuToggleButton
                     isUnwrapped={isUnwrapped}
                     setIsUnwrapped={setIsUnwrapped}
                     darkMode={scrolled || isUnwrapped}
                 />
             </div>
             <div className={clsx(
-                "w-full flex flex-col items-end gap-4",
+                "relative z-10 w-full flex flex-col items-end gap-4",
                 !isUnwrapped && 'hidden'
             )}>
                 <PlainText
@@ -77,13 +97,10 @@ export const Menu = () => {
                 >
                     Карта сайта
                 </PlainText>
-                <div className={clsx(
-                    "flex flex-col items-end gap-1"
-                )}>
+                <div className="flex flex-col items-end gap-1">
                     {menuSitemap.map(link =>
                         <Link
-                            // href={link.href}
-                            className="no-underline text-inherit"
+                            className="no-underline text-inherit group"
                             onClickCapture={() => {
                                 setIsUnwrapped(false)
                                 link.scrollTo();
@@ -94,7 +111,8 @@ export const Menu = () => {
                                     textClassName={clsx(
                                         "relative font-bold break-words",
                                         "transition-all duration-200",
-                                        "text-base xl:text-lg leading-[0.95] text-dark/25 hover:text-dark text-right"
+                                        "text-base xl:text-lg leading-[0.95] text-right",
+                                        "text-black hover:text-black/50"
                                     )}
                                 >
                                     {link.text}
@@ -104,6 +122,12 @@ export const Menu = () => {
                     )}
                 </div>
             </div>
+            <style>{`
+               @keyframes fadeIn {
+                   from { opacity: 0; }
+                   to { opacity: 1; }
+               }
+           `}</style>
         </div>
     );
 }

@@ -5,7 +5,11 @@ import sibeco_icon from '@/assets/sibeco-icon.png';
 import blossom_icon from '@/assets/blossom-icon.png';
 import polyakov_icon from '@/assets/polyakov-icon.png';
 import gorvodokanal_icon from '@/assets/gorvodokanal-icon.png'
-import swifts_group_icon from '@/assets/swifts-group-icon.png';
+import gazstroy_icon from '@/assets/gazstroy-icon.png';
+import cityhall_icon from '@/assets/cityhall-icon.png';
+import energomontazh_icon from '@/assets/energomontazh-icon.png';
+import ozon_icon from '@/assets/ozon-icon.png';
+import wb_icon from '@/assets/wb-icon.png';
 
 export type CompaniesSliderProps = React.HTMLProps<HTMLDivElement>
 
@@ -22,8 +26,12 @@ export const CompaniesSlider: React.FC<CompaniesSliderProps> = ({
         sibeco_icon,
         blossom_icon,
         polyakov_icon,
-        gorvodokanal_icon
-        // swifts_group_icon
+        gorvodokanal_icon,
+        gazstroy_icon,
+        cityhall_icon,
+        energomontazh_icon,
+        ozon_icon,
+        wb_icon
     ];
 
     const loopItems = [...items, ...items, ...items, ...items, ...items, ...items, ...items, ...items];
