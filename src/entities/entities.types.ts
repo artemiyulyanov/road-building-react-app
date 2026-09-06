@@ -23,6 +23,11 @@ export type TurnkeyAsphaltFormData = {
   taxNumber: string
 };
 
+export type AsphaltConcreteMixFormData = {
+    name: string
+    phone: string
+}
+
 export const asphaltTypes = {
     'a': 'А',
     'b': 'Б',

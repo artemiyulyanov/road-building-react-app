@@ -67,3 +67,11 @@ html, body {
   background-color: var(--color-dark);
   scroll-behavior: smooth;
 }
+
+.large-digit-icon-dark {
+  fill: #000000;
+}
+
+.large-digit-icon-light {
+  fill: #FFFFFF;
+}

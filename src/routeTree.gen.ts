@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AsphaltConcreteMixIndexRouteImport } from './routes/asphalt-concrete-mix/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AsphaltConcreteMixIndexRoute = AsphaltConcreteMixIndexRouteImport.update({
+  id: '/asphalt-concrete-mix/',
+  path: '/asphalt-concrete-mix/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/asphalt-concrete-mix/': typeof AsphaltConcreteMixIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/asphalt-concrete-mix': typeof AsphaltConcreteMixIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/asphalt-concrete-mix/': typeof AsphaltConcreteMixIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/asphalt-concrete-mix/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/asphalt-concrete-mix'
+  id: '__root__' | '/' | '/asphalt-concrete-mix/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AsphaltConcreteMixIndexRoute: typeof AsphaltConcreteMixIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/asphalt-concrete-mix/': {
+      id: '/asphalt-concrete-mix/'
+      path: '/asphalt-concrete-mix'
+      fullPath: '/asphalt-concrete-mix/'
+      preLoaderRoute: typeof AsphaltConcreteMixIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AsphaltConcreteMixIndexRoute: AsphaltConcreteMixIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

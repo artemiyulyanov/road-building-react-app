@@ -1,0 +1,93 @@
+import clsx from "clsx";
+import banner from '@/assets/introductory-banner/home.png';
+import { PlainText } from "@/ui/PlainText";
+import { PointerButton } from "@/ui/PointerButton";
+import { useRef } from "react";
+import { useAnimation } from "@/shared/useAnimation";
+import { Link } from "@heroui/react";
+import { useAnchorMenu } from "@/shared/useAnchorMenu";
+
+export type IntroductoryContainerProps = React.HTMLProps<HTMLDivElement> & {
+
+};
+
+export const IntroductoryContainer: React.FC<IntroductoryContainerProps> = ({
+    ...props
+}) => {
+    const scrollToTurnkeyAsphaltingForm = useAnchorMenu('turnkey-asphalting-form');
+
+    return (
+        <div
+            className={clsx(
+                "max-w-screen bg-center bg-no-repeat relative",
+                "h-[95vh] md:h-screen",
+                "bg-cover md:bg-[length:110%_auto]",
+                "rounded-b-3xl",
+                "flex items-center justify-center",
+            )}
+            style={{ 
+                backgroundImage: `url(${banner})`
+            }}
+        >
+            <div className={clsx(
+                "h-full flex flex-col items-center justify-center relative",
+                'w-full md:w-1/2 lg:w-1/3',
+                'pt-[15px] pb-[15px] pl-[20px] pr-[20px] md:p-0',
+            )}>
+                <div
+                    className="flex flex-col gap-[40px] items-center"
+                > 
+                    <div
+                        className="flex flex-col gap-[10px] items-center"
+                    >
+                        <PlainText
+                            textClassName={clsx(
+                                "whitespace-pre",
+                                "text-xs lg:text-sm font-bold",
+                                "bg-background color-dark",
+                                "pl-[10px] pr-[10px] pt-[5px] pb-[5px]",
+                                "rounded-full"
+                            )}
+                        >
+                            Производство и продажа асфальта в г.Новосибирске
+                        </PlainText>
+                        <PlainText
+                            textClassName={clsx(
+                                "text-5xl md:text-6xl font-medium",
+                                "text-light text-center"
+                            )}
+                        >
+                            Мы кладём асфальт
+                        </PlainText>
+                        <PlainText
+                            textClassName={clsx(
+                                "text-lg md:text-xl font-medium",
+                                "text-light text-center opacity-75 "
+                            )}
+                        >
+                            Имеем два асфальтовых завода по разным берегам Новосибирска, имульсионую установку, а так же полный комплекс дорожной спец техники.
+                        </PlainText>
+                    </div>
+                    <Link
+                        // href="#turnkey-asphalting-form"
+                        className="no-underline text-inherit"
+                        onClickCapture={scrollToTurnkeyAsphaltingForm}
+                    >
+                        <PointerButton>
+                            Оставить заявку
+                        </PointerButton>
+                    </Link>
+                </div>
+                <PlainText
+                    textClassName={clsx(
+                        "text-sm font-medium",
+                        "text-light text-center opacity-40 ",
+                        "absolute bottom-0 pb-8"
+                    )}
+                >
+                    Работаем в соответствие со стандартами ГОСТ
+                </PlainText>
+            </div>
+        </div>
+    );
+}

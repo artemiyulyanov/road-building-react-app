@@ -29,7 +29,7 @@ export const LargeLogoButton: React.FC<LargeLogoButtonProps> = ({
             <LargeLogoIcon 
                 darkMode={darkMode}
                 className={clsx(
-                    "relative w-72 md:w-80"
+                    "relative w-36 md:w-54"
                 )}
             />
         </PlainButton>

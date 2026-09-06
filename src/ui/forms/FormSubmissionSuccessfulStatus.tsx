@@ -23,7 +23,7 @@ export const FormSubmissionSuccessfulStatus: React.FC<FormSubmissionSuccessfulSt
                 <PlainText
                     textClassName={clsx(
                         "text-lg lg:text-xl font-medium",
-                        "text-center leading-[0.95]",
+                        "text-center ",
                         "text-light"
                     )}
                 >
