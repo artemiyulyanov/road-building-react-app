@@ -10,22 +10,22 @@ export const questions: Array<FaqAccordionData> = [
     {
         "slug": "rent-without-operator",
         "title": "Можно ли арендовать технику без оператора?",
-        "answer": "хз"
+        "answer": "-"
     },
     {
         "slug": "find-out-cost",
         "title": "Как узнать стоимость?",
-        "answer": "хз"
+        "answer": "-"
     },
     {
         "slug": "order-multiple-units",
         "title": "Можно заказать несколько единиц техники одновременно?",
-        "answer": "хз"
+        "answer": "-"
     },
     {
         "slug": "work-with-private-clients",
         "title": "Работаете ли с частными заказчиками?",
-        "answer": "хз"
+        "answer": "-"
     }
 ];
 

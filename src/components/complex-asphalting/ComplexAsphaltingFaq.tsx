@@ -10,22 +10,22 @@ export const questions: Array<FaqAccordionData> = [
     {
         "slug": "question-1",
         "title": "Вопрос №1",
-        "answer": "хз"
+        "answer": "-"
     },
     {
         "slug": "question-2",
         "title": "Вопрос №2",
-        "answer": "хз"
+        "answer": "-"
     },
     {
         "slug": "question-3",
         "title": "Вопрос №3",
-        "answer": "хз"
+        "answer": "-"
     },
     {
         "slug": "question-4",
         "title": "Вопрос №4",
-        "answer": "хз"
+        "answer": "-"
     },
 ];
 

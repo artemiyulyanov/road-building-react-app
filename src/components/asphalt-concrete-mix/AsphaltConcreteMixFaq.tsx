@@ -10,22 +10,22 @@ export const questions: Array<FaqAccordionData> = [
     {
         "slug": "min-batch",
         "title": "Какая минимальная партия?",
-        "answer": "хз"
+        "answer": "-"
     },
     {
         "slug": "cooperate-with-legal-entities",
         "title": "Работаете ли с юридическими лицами?",
-        "answer": "хз"
+        "answer": "-"
     },
     {
         "slug": "can-order-delivery",
         "title": "Можно ли заказать доставку?",
-        "answer": "хз"
+        "answer": "-"
     },
     {
         "slug": "find-out-cost",
         "title": "Как узнать стоимость?",
-        "answer": "хз"
+        "answer": "-"
     }
 ];
 
