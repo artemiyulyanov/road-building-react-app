@@ -33,6 +33,11 @@ export type TrustedFacilityFormData = {
     phone: string
 }
 
+export type ComplexAsphaltingFormData = {
+    name: string
+    phone: string
+}
+
 export const asphaltTypes = {
     'a': 'А',
     'b': 'Б',

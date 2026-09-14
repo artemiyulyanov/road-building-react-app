@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { AdvantageClause } from "./AdvantageClause";
+import { AdvantageClause } from "../AdvantageClause";
 
 export type AdvantagesListMobileProps = React.HTMLProps<HTMLDivElement>
 

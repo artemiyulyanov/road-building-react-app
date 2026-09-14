@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TrustedFacilityIndexRouteImport } from './routes/trusted-facility/index'
+import { Route as ComplexAsphaltingIndexRouteImport } from './routes/complex-asphalting/index'
 import { Route as AsphaltConcreteMixIndexRouteImport } from './routes/asphalt-concrete-mix/index'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const TrustedFacilityIndexRoute = TrustedFacilityIndexRouteImport.update({
   path: '/trusted-facility/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComplexAsphaltingIndexRoute = ComplexAsphaltingIndexRouteImport.update({
+  id: '/complex-asphalting/',
+  path: '/complex-asphalting/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AsphaltConcreteMixIndexRoute = AsphaltConcreteMixIndexRouteImport.update({
   id: '/asphalt-concrete-mix/',
   path: '/asphalt-concrete-mix/',
@@ -32,30 +38,47 @@ const AsphaltConcreteMixIndexRoute = AsphaltConcreteMixIndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/asphalt-concrete-mix/': typeof AsphaltConcreteMixIndexRoute
+  '/complex-asphalting/': typeof ComplexAsphaltingIndexRoute
   '/trusted-facility/': typeof TrustedFacilityIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/asphalt-concrete-mix': typeof AsphaltConcreteMixIndexRoute
+  '/complex-asphalting': typeof ComplexAsphaltingIndexRoute
   '/trusted-facility': typeof TrustedFacilityIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/asphalt-concrete-mix/': typeof AsphaltConcreteMixIndexRoute
+  '/complex-asphalting/': typeof ComplexAsphaltingIndexRoute
   '/trusted-facility/': typeof TrustedFacilityIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/asphalt-concrete-mix/' | '/trusted-facility/'
+  fullPaths:
+    | '/'
+    | '/asphalt-concrete-mix/'
+    | '/complex-asphalting/'
+    | '/trusted-facility/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/asphalt-concrete-mix' | '/trusted-facility'
-  id: '__root__' | '/' | '/asphalt-concrete-mix/' | '/trusted-facility/'
+  to:
+    | '/'
+    | '/asphalt-concrete-mix'
+    | '/complex-asphalting'
+    | '/trusted-facility'
+  id:
+    | '__root__'
+    | '/'
+    | '/asphalt-concrete-mix/'
+    | '/complex-asphalting/'
+    | '/trusted-facility/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AsphaltConcreteMixIndexRoute: typeof AsphaltConcreteMixIndexRoute
+  ComplexAsphaltingIndexRoute: typeof ComplexAsphaltingIndexRoute
   TrustedFacilityIndexRoute: typeof TrustedFacilityIndexRoute
 }
 
@@ -75,6 +98,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrustedFacilityIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/complex-asphalting/': {
+      id: '/complex-asphalting/'
+      path: '/complex-asphalting'
+      fullPath: '/complex-asphalting/'
+      preLoaderRoute: typeof ComplexAsphaltingIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/asphalt-concrete-mix/': {
       id: '/asphalt-concrete-mix/'
       path: '/asphalt-concrete-mix'
@@ -88,6 +118,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AsphaltConcreteMixIndexRoute: AsphaltConcreteMixIndexRoute,
+  ComplexAsphaltingIndexRoute: ComplexAsphaltingIndexRoute,
   TrustedFacilityIndexRoute: TrustedFacilityIndexRoute,
 }
 export const routeTree = rootRouteImport

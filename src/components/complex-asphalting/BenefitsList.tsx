@@ -8,7 +8,6 @@ import { RoadIcon } from "@/icons/RoadIcon";
 import { WrenchIcon } from "@/icons/WrenchIcon";
 import { ClockLightIcon } from "@/icons/ClockLightIcon";
 import { ClockDarkIcon } from "@/icons/ClockDarkIcon";
-import { MeterSquaredIcon } from "@/icons/MeterSquaredIcon";
 
 export type BenefitsListProps = React.HTMLProps<HTMLDivElement>
 
@@ -30,7 +29,7 @@ export const BenefitsList: React.FC<BenefitsListProps> = ({
                         )}
                     />
                 }
-                title="Имеем собственное асфальтобетонное производство и парк специализированной техники"
+                title="Закроем любой спектр задач от благоустройства дворов до строительства автомобильных дорог"
                 theme="transparent"
             />
             <PaintedCard 
@@ -41,18 +40,18 @@ export const BenefitsList: React.FC<BenefitsListProps> = ({
                         )}
                     />
                 }
-                title="Выполняем работы без привлечения посредников"
+                title="Исправная техника и профессиональные машинисты"
                 theme="light"
             />
             <PaintedCard 
                 icon={
-                    <MeterSquaredIcon
+                    <ClockDarkIcon
                         contentClassName={clsx(
                             "relative h-10 lg:h-12"
                         )}
                     />
                 }
-                title="Минимальный объём работ — от 500 м²"
+                title="Минимальный срок аренды — 10 часов"
                 theme="yellow"
             />
         </div>
