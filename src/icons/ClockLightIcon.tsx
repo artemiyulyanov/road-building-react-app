@@ -1,12 +1,11 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
 import icon from '@/assets/clock-icon.png';
 
-export type ClockIconProps = React.HTMLProps<HTMLDivElement> & {
+export type ClockLightIconProps = React.HTMLProps<HTMLDivElement> & {
     contentClassName?: string
 }
 
-export const ClockIcon: React.FC<ClockIconProps> = ({
+export const ClockLightIcon: React.FC<ClockLightIconProps> = ({
     contentClassName,
     ...props
 }) => {

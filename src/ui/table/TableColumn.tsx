@@ -10,7 +10,7 @@ export const TableColumn: React.FC<TableColumnProps> = ({
 }) => {
     return (
         <div className={clsx(
-            "w-full pt-[20px] pb-[20px] h-auto",
+            "w-full px-[20px] pt-[15px] pb-[15px] h-auto",
             !disableUnderlining && "border-b border-dark-2",
             "flex flex-row justify-between items-center"
         )}>

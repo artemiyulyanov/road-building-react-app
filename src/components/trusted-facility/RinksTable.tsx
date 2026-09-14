@@ -1,76 +1,48 @@
 import { PlainText } from "@/ui/PlainText";
-import { Table } from "../../ui/table/Table";
-import { TableColumn } from "../../ui/table/TableColumn";
+import { Table } from "@/ui/table/Table";
+import { TableColumn } from "@/ui/table/TableColumn";
+import { TableHeader } from "@/ui/table/TableHeader";
 import clsx from "clsx";
-import { TableHeader } from "../../ui/table/TableHeader";
 
-export type MixtureListTableProps = React.HTMLProps<HTMLDivElement>
+export type RinksTableProps = React.HTMLProps<HTMLDivElement>
 
-const columns: Array<Array<string>> = [
+const roadRollers: Array<Array<string>> = [
     [
-        "асфальтобетонные смеси типов А, Б, В и Г",
-        "от 100 рублей за кг"
+        "Каток 1,5 тонн",
+        "от 5000 рублей за час"
     ],
     [
-        "битумная эмульсия",
-        "от 100 рублей за кг"
+        "Каток 3 тонн",
+        "от 5000 рублей за час"
     ],
     [
-        "КЗ",
-        "от 100 рублей за кг"
+        "Каток 3,5 тонн",
+        "от 5000 рублей за час"
     ],
     [
-        "КЗБ",
-        "от 100 рублей за кг"
+        "Каток 8 тонн",
+        "от 5000 рублей за час"
     ],
     [
-        "А5",
-        "от 100 рублей за кг"
+        "Каток 12 тонн",
+        "от 5000 рублей за час"
     ],
     [
-        "А8",
-        "от 100 рублей за кг"
-    ],
-    [
-        "А16",
-        "от 100 рублей за кг"
-    ],
-    [
-        "А22",
-        "от 100 рублей за кг"
-    ],
-    [
-        "А32",
-        "от 100 рублей за кг"
-    ],
-    [
-        "ЩМА-16",
-        "от 100 рублей за кг"
-    ],
-    [
-        "ЩМА-22",
-        "от 100 рублей за кг"
-    ],
-    [
-        "SP",
-        "от 100 рублей за кг"
-    ],
-    [
-        "SMA",
-        "от 100 рублей за кг"
+        "Грунтовый каток 17 тонн",
+        "от 5000 рублей за час"
     ],
 ]
 
-export const MixtureListTable: React.FC<MixtureListTableProps> = ({}) => {
+export const RinksTable: React.FC<RinksTableProps> = ({}) => {
     return (
         <div className={clsx(
             "flex flex-col gap-6"
         )}>
             <Table>
                 <TableHeader>
-                    В наличии
+                    Дорожные катки
                 </TableHeader>
-                {columns.map(cells => (
+                {roadRollers.map(cells => (
                     <TableColumn>
                         <PlainText
                             textClassName={clsx(
@@ -91,14 +63,14 @@ export const MixtureListTable: React.FC<MixtureListTableProps> = ({}) => {
                     </TableColumn>
                 ))}
             </Table>
-            <PlainText
+            {/* <PlainText
                 textClassName={clsx(
                     "relative h-auto font-medium",
                     "text-light text-primary"
                 )}
             >
                 Каждая партия проходит лабораторный контроль качества перед отгрузкой
-            </PlainText>
+            </PlainText> */}
         </div>
     );
 }

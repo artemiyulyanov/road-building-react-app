@@ -28,6 +28,11 @@ export type AsphaltConcreteMixFormData = {
     phone: string
 }
 
+export type TrustedFacilityFormData = {
+    name: string
+    phone: string
+}
+
 export const asphaltTypes = {
     'a': 'А',
     'b': 'Б',

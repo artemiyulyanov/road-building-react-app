@@ -1,4 +1,4 @@
-import { ClockIcon } from "@/icons/ClockIcon";
+import { ClockLightIcon } from "@/icons/ClockLightIcon";
 import { LargeDigitWithPointIcon } from "@/icons/LargeDigitWithPointIcon";
 import { PlainText } from "@/ui/PlainText";
 import clsx from "clsx";
@@ -14,7 +14,7 @@ export const DeliveryDurationContainer: React.FC<DeliveryDurationContainerProps>
                 "flex flex-col gap-6"
             )}
         >
-            <ClockIcon
+            <ClockLightIcon
                 contentClassName={clsx(
                     "relative h-10 lg:h-12"
                 )}

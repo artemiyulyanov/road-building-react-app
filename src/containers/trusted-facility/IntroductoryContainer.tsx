@@ -1,9 +1,9 @@
-import { PlainText } from "@/ui/PlainText";
-import { PointerButton } from "@/ui/PointerButton";
-import { Link } from "@heroui/react";
-import clsx from "clsx";
-import banner from '@/assets/introductory-banner/asphalt-concrete-mix.png';
 import { useAnchorMenu } from "@/shared/useAnchorMenu";
+import clsx from "clsx";
+import banner from '@/assets/introductory-banner/trusted-facility.png';
+import { PlainText } from "@/ui/PlainText";
+import { Link } from "@heroui/react";
+import { PointerButton } from "@/ui/PointerButton";
 
 export type IntroductoryContainerProps = React.HTMLProps<HTMLDivElement>
 
@@ -51,7 +51,7 @@ export const IntroductoryContainer: React.FC<IntroductoryContainerProps> = () =>
                                 "text-light text-center"
                             )}
                         >
-                            Продажа асфальтобетонных смесей от производителя
+                            Надёжная спецтехника для строительства, ремонта и благоустройства
                         </PlainText>
                         <PlainText
                             textClassName={clsx(
@@ -59,7 +59,7 @@ export const IntroductoryContainer: React.FC<IntroductoryContainerProps> = () =>
                                 "text-light text-center opacity-75 "
                             )}
                         >
-                            Асфальтобетонные смеси по ГОСТ с доставкой
+                            Поможем с любыми задачами, от благоустройства дворов до строительства автомобильных дорог и промышленных площадок
                         </PlainText>
                     </div>
                     <Link
@@ -68,7 +68,7 @@ export const IntroductoryContainer: React.FC<IntroductoryContainerProps> = () =>
                         onClickCapture={scrollToForm}
                     >
                         <PointerButton>
-                            Получить цену
+                            Заказать спецтехнику
                         </PointerButton>
                     </Link>
                 </div>

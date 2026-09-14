@@ -14,7 +14,7 @@ export type IntroductoryContainerProps = React.HTMLProps<HTMLDivElement> & {
 export const IntroductoryContainer: React.FC<IntroductoryContainerProps> = ({
     ...props
 }) => {
-    const scrollToTurnkeyAsphaltingForm = useAnchorMenu('turnkey-asphalting-form');
+    const scrollToForm = useAnchorMenu('form-container');
 
     return (
         <div
@@ -69,9 +69,9 @@ export const IntroductoryContainer: React.FC<IntroductoryContainerProps> = ({
                         </PlainText>
                     </div>
                     <Link
-                        // href="#turnkey-asphalting-form"
+                        // href="#form-container"
                         className="no-underline text-inherit"
-                        onClickCapture={scrollToTurnkeyAsphaltingForm}
+                        onClickCapture={scrollToForm}
                     >
                         <PointerButton>
                             Оставить заявку

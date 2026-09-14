@@ -30,19 +30,15 @@ export const homeSitemap: Array<SitemapLink> = [
 
 export const asphaltConcreteMixSitemap: Array<SitemapLink> = [
     {
-        text: "Ассортимент смесей",
-        scrollTo: useAnchorMenu("mixture-list-container")
+        text: "Наш парк техники",
+        scrollTo: useAnchorMenu("vehicles-container")
     },
     {
-        text: "Почему именно мы",
-        scrollTo: useAnchorMenu("advantages-container")
-    },
-    {
-        text: "Доставка",
+        text: "Как оформить аренду",
         scrollTo: useAnchorMenu("delivery-container")
     },
     {
-        text: "Как оформить заказ",
+        text: "Условия аренды",
         scrollTo: useAnchorMenu("placing-order-guide-container")
     },
     {
@@ -54,3 +50,26 @@ export const asphaltConcreteMixSitemap: Array<SitemapLink> = [
         scrollTo: useAnchorMenu("form-container")
     },
 ];
+
+export const trustedFacilitySitemap: Array<SitemapLink> = [
+    {
+        text: "Наш парк техники",
+        scrollTo: useAnchorMenu("vehicles-container")
+    },
+    {
+        text: "Как оформить аренду",
+        scrollTo: useAnchorMenu("arranging-lease-guide-container")
+    },
+    {
+        text: "Условия аренды",
+        scrollTo: useAnchorMenu("leasing-conditions-container")
+    },
+    {
+        text: "FAQ",
+        scrollTo: useAnchorMenu("faq-container")
+    },
+    {
+        text: "Оформление заказа",
+        scrollTo: useAnchorMenu("form-container")
+    },
+]

@@ -14,7 +14,7 @@ export type FooterProps = React.HTMLProps<HTMLDivElement> & {
 export const Footer: React.FC<FooterProps> = ({
     footerSitemap
 }) => {
-    const scrollToTurnkeyAsphaltingForm = useAnchorMenu('turnkey-asphalting-form')
+    const scrollToForm = useAnchorMenu('form-container')
 
     return (
         <div className={clsx(
@@ -52,9 +52,9 @@ export const Footer: React.FC<FooterProps> = ({
                         </PlainText>
                     </div>
                     <Link
-                        // href="#turnkey-asphalting-form"
+                        // href="#form-container"
                         className="no-underline text-inherit"
-                        onClickCapture={scrollToTurnkeyAsphaltingForm}
+                        onClickCapture={scrollToForm}
                     >
                         <PointerButton 
                             theme="primary"
