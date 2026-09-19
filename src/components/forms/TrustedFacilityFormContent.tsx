@@ -1,3 +1,4 @@
+import { postContactForm } from "@/api/api.endpoints";
 import type { TrustedFacilityFormData } from "@/entities/entities.types";
 import { BaseButton } from "@/ui/BaseButton";
 import { PlainText } from "@/ui/PlainText";
@@ -25,18 +26,19 @@ export const TrustedFacilityFormContent: React.FC<TrustedFacilityFormContentProp
     });
 
     const onSubmit = async (data: TrustedFacilityFormData) => {
-        // try {
-        //     const payload = {
-        //         ...data
-        //     };
+        try {
+            const payload = {
+                ...data,
+                "title": "Заявка на аренду спецтехники"
+            };
 
-        //     const res = await postTrustedFacilityForm(payload);
+            const res = await postContactForm(payload);
 
-        //     setSubmissionStatus(res.status);
-        // } catch (error) {
-        //     console.log(error);
-        //     setSubmissionStatus(0);
-        // }
+            setSubmissionStatus(res.status);
+        } catch (error) {
+            console.log(error);
+            setSubmissionStatus(0);
+        }
     }
 
     const onError = (errors: any) => {

@@ -17,3 +17,21 @@ export const postTurnkeyAsphaltForm = async (payload: any) => {
         data,
     };
 };
+
+export const postContactForm = async (payload: any) => {
+    const res = await fetch(API_DOMAIN + "/contact-lead", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+    });
+
+    const data = await res.json().catch(() => null);
+
+    return {
+        status: res.status,
+        ok: res.ok,
+        data,
+    };
+};

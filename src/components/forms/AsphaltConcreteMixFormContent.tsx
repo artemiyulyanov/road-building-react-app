@@ -1,3 +1,4 @@
+import { postContactForm, postTurnkeyAsphaltForm } from "@/api/api.endpoints";
 import type { AsphaltConcreteMixFormData } from "@/entities/entities.types";
 import { BaseButton } from "@/ui/BaseButton";
 import { PlainText } from "@/ui/PlainText";
@@ -25,19 +26,19 @@ export const AsphaltConcreteMixFormContent: React.FC<AsphaltConcreteMixFormConte
     });
 
     const onSubmit = async (data: AsphaltConcreteMixFormData) => {
-        // try {
-        //     const payload = {
-        //         ...data,
-        //         type: (isAsphaltType(data.type)) ? asphaltTypes[data.type] : data.type
-        //     };
+        try {
+            const payload = {
+                ...data,
+                "title": "Заявка на покупку асфальта"
+            };
 
-        //     const res = await postTurnkeyAsphaltForm(payload);
+            const res = await postContactForm(data);
 
-        //     setSubmissionStatus(res.status);
-        // } catch (error) {
-        //     console.log(error);
-        //     setSubmissionStatus(0);
-        // }
+            setSubmissionStatus(res.status);
+        } catch (error) {
+            console.log(error);
+            setSubmissionStatus(0);
+        }
     }
 
     const onError = (errors: any) => {

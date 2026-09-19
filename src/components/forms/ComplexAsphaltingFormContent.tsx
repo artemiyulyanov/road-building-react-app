@@ -1,3 +1,4 @@
+import { postContactForm } from "@/api/api.endpoints";
 import type { ComplexAsphaltingFormData } from "@/entities/entities.types";
 import { BaseButton } from "@/ui/BaseButton";
 import { PlainText } from "@/ui/PlainText";
@@ -25,19 +26,19 @@ export const ComplexAsphaltingFormContent: React.FC<ComplexAsphaltingFormContent
     });
 
     const onSubmit = async (data: ComplexAsphaltingFormData) => {
-        // try {
-        //     const payload = {
-        //         ...data,
-        //         type: (isAsphaltType(data.type)) ? asphaltTypes[data.type] : data.type
-        //     };
+        try {
+            const payload = {
+                ...data,
+                "title": "Заявка на комплексное асфальтирование"
+            };
 
-        //     const res = await postTurnkeyAsphaltForm(payload);
+            const res = await postContactForm(payload);
 
-        //     setSubmissionStatus(res.status);
-        // } catch (error) {
-        //     console.log(error);
-        //     setSubmissionStatus(0);
-        // }
+            setSubmissionStatus(res.status);
+        } catch (error) {
+            console.log(error);
+            setSubmissionStatus(0);
+        }
     }
 
     const onError = (errors: any) => {
